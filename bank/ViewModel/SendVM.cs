@@ -19,7 +19,7 @@ namespace bank.ViewModel
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
         Window _sendwindow;
-        public SendVM(Window mainWindow) => _sendwindow = mainWindow;
+        public SendVM(Window sendWindow) => _sendwindow = sendWindow;
         string _comment;
         int _sum;
         int _cardnum;
@@ -61,7 +61,7 @@ namespace bank.ViewModel
                       var _card = CardBehavior.Get(CardNum);
                       if (_card != null)
                       {
-
+                          TransactBehavior.SendMoney(_card,Sum,Comment);
                       }
                       else
                       {

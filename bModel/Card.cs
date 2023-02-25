@@ -22,5 +22,6 @@ namespace bModel
                 PinCode = card.PinCode;
             }
         }
+        public Card() { Balance = 100; }
     }
 }

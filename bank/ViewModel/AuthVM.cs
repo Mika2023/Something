@@ -52,8 +52,8 @@ namespace bank.ViewModel
                       if (_user != null)
                       {
                           SingleTon.user = _user;
-                          //MainWindow startWindow = new MainWindow();
-                          //startWindow.Show();
+                          InfoHuman info = new InfoHuman();
+                          info.Show();
                           _mainWindow.Close();
 
                       }

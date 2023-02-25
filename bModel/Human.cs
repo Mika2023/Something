@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace bModel
 {
-    public abstract class Human
+    public class Human
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -16,5 +16,14 @@ namespace bModel
         public int UserId { get; set; }
         public Card Card { get; set; }
         public int CardId { get; set; }
+        public void UpdateEnty(Human human)
+        {
+            if (human != null)
+            {
+                Age = human.Age;
+                Lastname = human.Lastname;
+                Name = human.Name;
+            }
+        }
     }
 }

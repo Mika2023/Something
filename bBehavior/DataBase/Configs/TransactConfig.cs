@@ -16,7 +16,7 @@ namespace bBehavior.DataBase.Configs
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).ValueGeneratedOnAdd();
             builder.HasOne(x => x.Sender).WithMany(x => x.Transactions);
-            builder.HasOne(x => x.Reciever).WithMany(x => x.Transactions);
+            //builder.HasOne(x => x.Reciever).WithMany(x => x.Transactions);
         }
     }
 }

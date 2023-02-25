@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using bBehavior.DataBase;
 using bModel;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace bBehavior
 {
@@ -24,6 +25,8 @@ namespace bBehavior
             transaction.Reciever = card;
             transaction.Sum = sum;
             transaction.Comment = comment;
+            transaction.Sender = SingleTon.human.Card;
+            transaction.Transact();
         }
     }
 }

@@ -14,11 +14,22 @@ namespace bBehavior
         public static Card card { get; set; }
         public static void join()
         {
-            if (human!=null && card!=null)
+            var Hum = HumanBehavior.GetUser(user.Id);
+            if (Hum!=null)
             {
-                human.Card = card;
-                human.User = user;
+                var C = CardBehavior.GetId(Hum.CardId);
+                if (C!=null)
+                {
+                    human = Hum;
+                    card = C;
+                }
+                else
+                {
+                    throw new Exception("Введите данные карты!");
+
+                }
             }
+            else throw new Exception("Введите свои данные!");
         }
     }
 }

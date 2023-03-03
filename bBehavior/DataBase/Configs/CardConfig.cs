@@ -17,7 +17,7 @@ namespace bBehavior.DataBase.Configs
             builder.Property(x => x.Id).ValueGeneratedOnAdd();
             builder.HasOne(u => u.Owner)
                 .WithOne(u => u.Card).HasForeignKey<Human>(u => u.CardId);
-            builder.Property(u => u.CVC).ValueGeneratedOnAdd();
+            
             builder.HasIndex(x => x.CardNumber);
         }
     }

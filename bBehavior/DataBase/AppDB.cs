@@ -23,7 +23,7 @@ namespace bBehavior.DataBase
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=Baank.db");
+            optionsBuilder.UseSqlite("Data Source=Bank.db");
         }
     }
 }

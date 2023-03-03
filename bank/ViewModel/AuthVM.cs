@@ -51,11 +51,19 @@ namespace bank.ViewModel
                       var _user = UserBehavior.GetAuth(Login, Password);
                       if (_user != null)
                       {
-                          SingleTon.user = _user;
-                          InfoHuman info = new InfoHuman();
-                          info.Show();
-                          _mainWindow.Close();
-
+                          try
+                          {
+                              SingleTon.user = _user;
+                              
+                              Main info = new Main();
+                              info.Show();
+                              _mainWindow.Close();
+                          }
+                          catch(Exception ex)
+                          {
+                              MessageBox.Show(ex.Message);
+                          }
+                          
                       }
                       else
                       {

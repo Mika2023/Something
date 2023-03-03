@@ -37,5 +37,10 @@ namespace bBehavior
             using (AppDB appDB = new AppDB())
                 return appDB.Cards.FirstOrDefault(u => u.PinCode == PinCode && u.CardNumber == CardNum);
         }
+        public static Card GetId(int cardId)
+        {
+            using (AppDB appDB = new AppDB())
+                return appDB.Cards.FirstOrDefault(c => c.Id == cardId);
+        }
     }
 }

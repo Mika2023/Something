@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bank"
         mc:Ignorable="d"
-        Title="InfoCard" Height="451" Width="485">
-    <Border CornerRadius="20" BorderThickness="1" BorderBrush="Black" Height="300" Width="475" Margin="5,10,5,124" Background="#FF50B965">
+        Title="InfoCard" Height="459" Width="485" Background="White">
+    <Border CornerRadius="20" BorderThickness="1" BorderBrush="Black" Height="300" Width="475" Margin="5,10,5,124" Background="#FF9E3B3B">
         <Grid Margin="1,10,-2,-10">
             <TextBox Height="35" Margin="29,86,207,177" Text="{Binding card.CardNumber}"/>
             <TextBlock Height="20" Margin="29,66,307,212" Text="Номер карты" FontSize="16" Foreground="White"/>
@@ -14,7 +14,7 @@
             <TextBlock Height="20" Margin="331,66,108,212" Text="CVC" FontSize="16" Foreground="White"/>
             <TextBox Height="35" Margin="135,186,135,77" Text="{Binding card.PinCode}"/>
             <TextBlock Height="20" Margin="135,160,201,118" Text="Пин-код" FontSize="16" Foreground="White" RenderTransformOrigin="0.93,0.454"/>
-            <Button Height="35" Margin="174,236,174,27" Background="White" Content="Сохранить" FontSize="16" Foreground="#FF50B965" Command="{Binding CardInfo}"/>
+            <Button Height="35" Margin="174,236,174,27" Background="White" Content="Сохранить" FontSize="16" Foreground="#FFC72424" Command="{Binding CardInfo}"/>
         </Grid>
 
     </Border>

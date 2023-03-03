@@ -12,6 +12,7 @@ namespace bModel
         public string Name { get; set; }
         public string Lastname { get; set; }
         public int Age { get; set; }
+        public int PasportNum { get; set; }
         public User User { get; set; }
         public int UserId { get; set; }
         public Card Card { get; set; }

@@ -27,51 +27,57 @@ namespace bank.ViewModel
                 return _interesting ??
                   (_interesting = new Command((o) =>
                   {
-                      try
-                      {
+                      
                           HumanBehavior.Post(Human);
-                          SingleTon.human = Human;
-                          InfoCard infoCard = new InfoCard();
-                          infoCard.Show();
+                      //SingleTon.human = Human;
+                          Main main = new Main();
+                          main.Show();
                           _window.Close();
-                      }
-                      catch (Exception ex)
-                      {
-                          MessageBox.Show(ex.Message);
-                      }
+                      
+                      //catch (Exception ex)
+                      //{
+                      //    MessageBox.Show(ex.Message);
+                      //}
                   }));
             }
         }
-        Command? _skip;
-        public Command Skip
-        {
-            get
-            {
-                return _skip ??
-                    (_skip= new Command((o) =>
-                    {
-                        
-                        var human = HumanBehavior.Get(SingleTon.user.Human.Id);
-                        if (human != null)
-                        {
-                            var card = CardBehavior.Get(SingleTon.user.Human.Card.CardNumber);
-                            if(card != null)
-                            {
-                                SingleTon.card = card;
-                                SingleTon.human = human;
-                                SingleTon.join();
-                                Main main = new Main();
-                                main.Show();
-                                _window?.Close();
-                            }
-                            
-                        }
-                        else { MessageBox.Show("Сначала введите данные!"); return; }
-                    }));
+        //Command? _skip;
+        //public Command Skip
+        //{
+        //    get
+        //    {
+        //        return _skip ??
+        //            (_skip= new Command((o) =>
+        //            {
+
+        //                try
+        //                {
+        //                    //var human = HumanBehavior.GetUser(SingleTon.user.Id);
+        //                    //if (human != null)
+        //                    //{
+        //                    //    var card = CardBehavior.GetId(human.CardId);
+        //                    //    if (card != null)
+        //                    //    {
+        //                    //        SingleTon.human = human;
+        //                    //        SingleTon.card = card;
+        //                    //        SingleTon.join();
+        //                    //        Main main = new Main();
+        //                    //        main.Show();
+        //                    //        _window?.Close();
+        //                    //    }
+        //                    //}
+
+        //                }
+        //                catch (Exception ex)
+        //                {
+        //                    MessageBox.Show(ex.Message);
+        //                }
+
+        //            }));
                     
                     
                     
-            }
-        }
+        //    }
+        //}
     }
 }

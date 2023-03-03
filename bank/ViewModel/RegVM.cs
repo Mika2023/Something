@@ -33,6 +33,9 @@ namespace bank.ViewModel
                               var user = UserBehavior.Get(User.Login);
                               if (user != null) { MessageBox.Show("Пользователь уже существует!"); return; }
                               UserBehavior.Post(User);
+                              SIngleTonReg.user = User;
+                              InfoCard infoHuman = new InfoCard();
+                              infoHuman.Show();
                               _window.Close();
                           }
                       }

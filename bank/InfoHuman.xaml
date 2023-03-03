@@ -6,15 +6,19 @@
         xmlns:local="clr-namespace:bank"
         mc:Ignorable="d"
         Title="InfoHuman" Height="450" Width="800" Background="{x:Null}">
-    <Grid Background="White">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/1612923688_86-p-krasnii-fon-dlya-storis-107.jpg"/>
+        </Grid.Background>
         <TextBlock HorizontalAlignment="Center" Margin="0,39,0,0" TextWrapping="Wrap" Text="Ваши данные" VerticalAlignment="Top" Height="34" Width="184" FontSize="18" TextAlignment="Center" Background="#FFFFB4B4"/>
         <TextBlock HorizontalAlignment="Left" Margin="107,131,0,0" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top" Height="28" Width="140" FontSize="18" TextAlignment="Center" Background="#FFFFB4B4"/>
         <TextBlock HorizontalAlignment="Left" Margin="107,198,0,0" TextWrapping="Wrap" Text="Фамилия" VerticalAlignment="Top" Height="28" Width="140" FontSize="18" TextAlignment="Center" Background="#FFFFB4B4"/>
         <TextBlock HorizontalAlignment="Left" Margin="107,262,0,0" TextWrapping="Wrap" Text="Возраст" VerticalAlignment="Top" Height="28" Width="140" FontSize="18" TextAlignment="Center" Background="#FFFFB4B4"/>
         <TextBox HorizontalAlignment="Center" Margin="0,131,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="183" Height="28" FontSize="18" TextAlignment="Center" Background="#FFFFB4B4" Text="{Binding Human.Name}"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,198,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="184" Height="28" FontSize="18" TextAlignment="Center" Background="#FFFFB4B4" Text="{Binding Human.LastName}"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,198,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="184" Height="28" FontSize="18" TextAlignment="Center" Background="#FFFFB4B4" Text="{Binding Human.Lastname}"/>
         <TextBox HorizontalAlignment="Center" Margin="0,262,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="184" Height="28" FontSize="18" TextAlignment="Center" Background="#FFFFB4B4" Text="{Binding Human.Age}"/>
-        <Button Content="Продолжить" HorizontalAlignment="Center" Margin="0,325,0,0" VerticalAlignment="Top" Height="34" Width="184" FontSize="18"  Background="#FFFFB4B4" Command="{Binding Interesting}"/>
-        <Button Content="Пропустить" HorizontalAlignment="Center" Margin="0,375,0,0" VerticalAlignment="Top" Height="34" Width="184" FontSize="18"  Background="#FFFFB4B4" Command="{Binding Skip}"/>
+        <Button Content="Продолжить" HorizontalAlignment="Center" Margin="0,374,0,0" VerticalAlignment="Top" Height="34" Width="184" FontSize="18"  Background="#FFFFB4B4" Command="{Binding Interesting}"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,322,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="184" Height="28" FontSize="18" TextAlignment="Center" Background="#FFFFB4B4" Text="{Binding Human.PasportNum}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="107,322,0,0" TextWrapping="Wrap" Text="Номер паспорта" VerticalAlignment="Top" Height="28" Width="140" FontSize="18" TextAlignment="Center" Background="#FFFFB4B4"/>
     </Grid>
 </Window>

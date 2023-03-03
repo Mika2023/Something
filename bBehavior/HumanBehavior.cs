@@ -14,7 +14,7 @@ namespace bBehavior
         {
             using (AppDB appDB = new AppDB())
             {
-                var hum = appDB.People.FirstOrDefault(u => u.Name==human.Name && u.Lastname==human.Lastname && u.Age==human.Age);
+                var hum = appDB.People.FirstOrDefault(u => u.PasportNum == human.PasportNum);
                 if (hum != null)
                 {
                     hum.UpdateEnty(human);
@@ -22,16 +22,30 @@ namespace bBehavior
                 }
                 else
                 {
+                    //Human h = new Human()
+                    //{
+                    //    PasportNum = human.PasportNum,
+                    //    Name = human.Name,
+                    //    Lastname = human.Lastname,
+                    //    Age = human.Age,
+                    //    Card = SIngleTonReg.card,
+                    //    User = SIngleTonReg.user
+                    //};
                     appDB.People.Add(human);
 
                 }
                 appDB.SaveChanges();
             }
         }
-        public static Human Get(int Id)
+        public static Human Get(int PasportNum)
         {
             using (AppDB appDB = new AppDB())
-                return appDB.People.FirstOrDefault(u => u.Id == Id);
+                return appDB.People.FirstOrDefault(u => u.PasportNum == PasportNum);
+        }
+        public static Human GetUser(int UserId)
+        {
+            using (AppDB appDB = new AppDB())
+                return appDB.People.FirstOrDefault(u => u.UserId == UserId);
         }
     }
 }

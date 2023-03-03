@@ -30,10 +30,10 @@ namespace bank.ViewModel
                       {
                           var car = CardBehavior.Get(card.CardNumber);
                           if (car != null) { MessageBox.Show("Неверный номер карты"); return; }
-                          CardBehavior.Post(card);
+                          //CardBehavior.Post(card);
                           //SingleTon.card = card;
                           //SingleTon.join();
-                          //SIngleTonReg.card = card;
+                          SIngleTonReg.card = card;
                           InfoHuman info = new InfoHuman();
                           info.Show();
                           _window.Close();

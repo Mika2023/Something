@@ -27,11 +27,12 @@ namespace bank.ViewModel
                 return _interesting ??
                   (_interesting = new Command((o) =>
                   {
-                      
+                     
                           HumanBehavior.Post(Human);
+                      CardBehavior.Post(SIngleTonReg.card);
+                      UserBehavior.Post(SIngleTonReg.user);
                       //SingleTon.human = Human;
-                          Main main = new Main();
-                          main.Show();
+                          
                           _window.Close();
                       
                       //catch (Exception ex)

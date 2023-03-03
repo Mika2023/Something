@@ -29,8 +29,12 @@ namespace bBehavior
                     //    Lastname = human.Lastname,
                     //    Age = human.Age,
                     //    Card = SIngleTonReg.card,
-                    //    User = SIngleTonReg.user
+                    //    User = SIngleTonReg.user,
+                    //    CardId = SIngleTonReg.card.Id,
+                    //    UserId = SIngleTonReg.user.Id,
                     //};
+                    human.Card = SIngleTonReg.card;
+                    human.User = SIngleTonReg.user;
                     appDB.People.Add(human);
 
                 }
@@ -47,5 +51,6 @@ namespace bBehavior
             using (AppDB appDB = new AppDB())
                 return appDB.People.FirstOrDefault(u => u.UserId == UserId);
         }
+        
     }
 }

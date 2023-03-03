@@ -54,7 +54,7 @@ namespace bank.ViewModel
                           try
                           {
                               SingleTon.user = _user;
-                              
+                              SingleTon.join();
                               Main info = new Main();
                               info.Show();
                               _mainWindow.Close();

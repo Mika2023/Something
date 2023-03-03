@@ -20,6 +20,7 @@ namespace bModel
             if (card != null)
             {
                 PinCode = card.PinCode;
+                Balance = card.Balance;
             }
         }
         public Card() { Balance = 100; }

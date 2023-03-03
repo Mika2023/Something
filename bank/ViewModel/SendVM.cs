@@ -79,14 +79,9 @@ namespace bank.ViewModel
                       var _card = CardBehavior.Get(CardNum);
                       if (_card != null)
                       {
-                          try
-                          {
+                          
                               TransactBehavior.SendMoney(_card, transaction);
-                          }
-                          catch (Exception ex)
-                          {
-                              MessageBox.Show(ex.Message);
-                          }
+                          
                           Main main = new Main();
                           main.Show();
                           _sendwindow.Close();

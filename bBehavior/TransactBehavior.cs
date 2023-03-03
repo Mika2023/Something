@@ -43,14 +43,15 @@ namespace bBehavior
                 transaction.Sender = CardBehavior.GetId(SingleTon.card.Id);
                 transaction.Reciever = CardBehavior.GetId(card.Id);
                 transaction.Transact();
-                TransactBehavior.Post(transaction);
                 CardBehavior.Post(transaction.Sender);
                 CardBehavior.Post(transaction.Reciever);
+            
         }
         public static List<Transaction> GetTransaction (Human human)
         {
-            using (AppDB appDB = new AppDB())
-                return appDB.Transactions.Where(t => t.Sender.Id == human.CardId || t.Reciever.Id == human.CardId).ToList();
+            var card = CardBehavior.GetId(human.CardId);
+            if (card != null) return card.Transactions;
+            else return new List<Transaction> ();
         }
     }
 }

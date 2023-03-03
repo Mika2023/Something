@@ -16,17 +16,14 @@ using System.Windows.Shapes;
 namespace bank
 {
     /// <summary>
-    /// Логика взаимодействия для Send.xaml
+    /// Логика взаимодействия для Table.xaml
     /// </summary>
-    public partial class Send : Window
+    public partial class Table : Window
     {
-        
-        public Send()
+        public Table()
         {
             InitializeComponent();
-            DataContext = new SendVM(this);
+            DataContext = new TableVM(this);
         }
-
-        
     }
 }

@@ -12,6 +12,7 @@ namespace bModel
         public DateTime Date { get; set; }
         public int Sum { get; set; }
         public string Comment { get; set; }
+        public int Code { get; set; }
         public Card Sender { get; set; }
         public Card Reciever { get; set; }
         public void Transact()
@@ -21,6 +22,11 @@ namespace bModel
             Reciever.Balance += Sum;
             Sender.Transactions.Add(this);
             Reciever.Transactions.Add(this);
+        }
+        public void UpdateEnty(Transaction transaction)
+        {
+            if (transaction != null)
+            Comment = transaction.Comment;
         }
     }
 }

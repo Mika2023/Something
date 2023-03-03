@@ -51,6 +51,12 @@ namespace bBehavior
             using (AppDB appDB = new AppDB())
                 return appDB.People.FirstOrDefault(u => u.UserId == UserId);
         }
+        //public static List<Human> GetHumen()
+        //{
+        //    using (AppDB appDB = new AppDB())
+        //        return appDB.People.ToList(); 
+
+        //}
         
     }
 }

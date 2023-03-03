@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:bank"
         mc:Ignorable="d"
-        Title="Send" Height="450" Width="800">
+        Title="Send" Height="451" Width="677">
     <Grid>
-        
+        <Grid.Background>
+            <ImageBrush ImageSource="/1612923688_86-p-krasnii-fon-dlya-storis-107.jpg"/>
+        </Grid.Background>
+        <TextBlock HorizontalAlignment="Center" Margin="0,48,0,0" TextWrapping="Wrap" Text="Перевести" VerticalAlignment="Top" Height="32" Width="175" FontSize="20" TextAlignment="Center"  Background="#FFFFC8C8"/>
+        <TextBlock HorizontalAlignment="Left" Margin="59,115,0,0" TextWrapping="Wrap" Text="Номер карты" VerticalAlignment="Top" Height="27" Width="175" FontSize="20" TextAlignment="Center"  Background="#FFFFC8C8"/>
+        <TextBlock HorizontalAlignment="Left" Margin="59,170,0,0" TextWrapping="Wrap" Text="Сумма" VerticalAlignment="Top" Height="27" Width="175" FontSize="20" TextAlignment="Center"  Background="#FFFFC8C8"/>
+        <TextBlock HorizontalAlignment="Left" Margin="59,229,0,0" TextWrapping="Wrap" Text="Комментарий" VerticalAlignment="Top" Height="27" Width="175" FontSize="20" TextAlignment="Center"  Background="#FFFFC8C8"/>
+        <TextBlock HorizontalAlignment="Left" Margin="59,287,0,0" TextWrapping="Wrap" Text="Код" VerticalAlignment="Top" Height="27" Width="175" FontSize="20" TextAlignment="Center"  Background="#FFFFC8C8"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,115,0,0" TextWrapping="Wrap"  Text="{Binding CardNum}" VerticalAlignment="Top" Width="176" Height="27" Background="#FFFFC8C8" FontSize="20" TextAlignment="Left"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,170,0,0" TextWrapping="Wrap"  Text="{Binding transaction.Sum}" VerticalAlignment="Top" Width="176" Height="27" Background="#FFFFC8C8" FontSize="20" TextAlignment="Left"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,229,0,0" TextWrapping="Wrap"  Text="{Binding transaction.Comment}" VerticalAlignment="Top" Width="176" Height="27" Background="#FFFFC8C8" FontSize="20" TextAlignment="Left"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,287,0,0" TextWrapping="Wrap"  Text="{Binding transaction.Code}" VerticalAlignment="Top" Width="176" Height="27" Background="#FFFFC8C8" FontSize="20" TextAlignment="Left"/>
+        <Button Content="Получить код" HorizontalAlignment="Left" Margin="500,353,0,0" VerticalAlignment="Top" Width="104" Background="#FFFFC8C8" Command="{Binding Rand}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="500,332,0,0" TextWrapping="Wrap" Text="{Binding RandCode}" VerticalAlignment="Top" Width="104" Background="#FFFFC8C8" TextAlignment="Center"/>
+        <Button Content="Отправить" HorizontalAlignment="Center" Margin="0,343,0,0" VerticalAlignment="Top" Width="177" Height="30" Background="#FFFFC8C8" FontSize="20" Command="{Binding Send}"/>
+
     </Grid>
 </Window>

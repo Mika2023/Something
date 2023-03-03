@@ -7,6 +7,15 @@
         mc:Ignorable="d"
         Title="Main" Height="450" Width="800">
     <Grid>
-        
+        <Rectangle HorizontalAlignment="Center" Height="134" Margin="0,300,0,0" Stroke="#FFF57676" VerticalAlignment="Top" Width="800" Fill="#FFF57676"/>
+        <Image HorizontalAlignment="Left" Height="290" Margin="33,10,0,0" VerticalAlignment="Top" Width="302" Source="/MV5BMDk4NjViZmMtZDFjZC00OGQyLWIwZTAtNTRjMzNiYTJjZWQzXkEyXkFqcGdeQXVyODEzNjM5OTQ@._V1_FMjpg_UX1000_.jpg"/>
+        <Image HorizontalAlignment="Left" Height="182" Margin="372,276,0,0" VerticalAlignment="Top" Width="399" Source="/d8816003ac2ce32cb268c084db3ae21396464824e32d1de1e9fb55f648640233.png"/>
+        <TextBlock HorizontalAlignment="Left" Margin="388,10,0,0" TextWrapping="Wrap" Text="Приветствуем," VerticalAlignment="Top" Height="34" Width="200" TextAlignment="Center" FontSize="20" Foreground="#FF690E0E"/>
+        <TextBlock HorizontalAlignment="Left" Margin="567,10,0,0" TextWrapping="Wrap" Text="{Binding human.Name}" VerticalAlignment="Top" Height="34" Width="142" TextAlignment="Left" FontSize="20" Foreground="#FF690E0E"/>
+        <TextBlock HorizontalAlignment="Left" Margin="467,59,0,0" TextWrapping="Wrap" Text="Ваш баланс" VerticalAlignment="Top" Height="34" Width="200" TextAlignment="Center" FontSize="20" Foreground="#FF690E0E"/>
+        <TextBlock HorizontalAlignment="Left" Margin="467,133,0,0" TextWrapping="Wrap" Text="{Binding card.Balance}" VerticalAlignment="Top" Height="34" Width="200" TextAlignment="Center" FontSize="20" Foreground="#FF690E0E"/>
+        <Button Content="Перевести" HorizontalAlignment="Left" Margin="49,319,0,0" VerticalAlignment="Top" Height="38" Width="158" Background="White" FontSize="20" Foreground="#FF690E0E" Click="Button_Click"/>
+        <Button Content="История" HorizontalAlignment="Left" Margin="49,367,0,0" VerticalAlignment="Top" Height="38" Width="158" Background="White" FontSize="20" Foreground="#FF690E0E" Click="Button_Click_1"/>
+
     </Grid>
 </Window>

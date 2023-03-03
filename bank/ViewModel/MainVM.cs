@@ -16,8 +16,8 @@ namespace bank.ViewModel
         public Human human { get; set; }
         public MainVM(Window window)
         {
-            card = SingleTon.card;
-            human = SingleTon.human;
+            card = CardBehavior.GetId(SingleTon.card.Id);
+            human = HumanBehavior.Get(SingleTon.human.PasportNum);
             _window = window;
         }
         //Command? _send;

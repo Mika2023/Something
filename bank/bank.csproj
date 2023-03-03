@@ -9,6 +9,8 @@
 
   <ItemGroup>
     <None Remove="1612923688_86-p-krasnii-fon-dlya-storis-107.jpg" />
+    <None Remove="d8816003ac2ce32cb268c084db3ae21396464824e32d1de1e9fb55f648640233.png" />
+    <None Remove="MV5BMDk4NjViZmMtZDFjZC00OGQyLWIwZTAtNTRjMzNiYTJjZWQzXkEyXkFqcGdeQXVyODEzNjM5OTQ%40._V1_FMjpg_UX1000_.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +24,8 @@
 
   <ItemGroup>
     <Resource Include="1612923688_86-p-krasnii-fon-dlya-storis-107.jpg" />
+    <Resource Include="d8816003ac2ce32cb268c084db3ae21396464824e32d1de1e9fb55f648640233.png" />
+    <Resource Include="MV5BMDk4NjViZmMtZDFjZC00OGQyLWIwZTAtNTRjMzNiYTJjZWQzXkEyXkFqcGdeQXVyODEzNjM5OTQ@._V1_FMjpg_UX1000_.jpg" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,14 +20,37 @@ namespace bBehavior
                 return transactions.ToArray();
             }
         }
-        public static void SendMoney(Card card, int sum, string comment)
+        public static void Post(Transaction transaction)
         {
-            Transaction transaction = new Transaction();
-            transaction.Reciever = card;
-            transaction.Sum = sum;
-            transaction.Comment = comment;
-            transaction.Sender = SingleTon.human.Card;
-            transaction.Transact();
+            using (AppDB appDB = new AppDB())
+            {
+                var c = appDB.Transactions.FirstOrDefault(u => u.Code == transaction.Code);
+                if (c != null)
+                {
+                    c.UpdateEnty(transaction);
+                    appDB.Update(c);
+                }
+                else
+                {
+                    appDB.Transactions.Add(transaction);
+                }
+                appDB.SaveChanges();
+            }
+        }
+        public static void SendMoney(Card card, Transaction transaction)
+        {
+            
+                transaction.Sender = CardBehavior.GetId(SingleTon.card.Id);
+                transaction.Reciever = CardBehavior.GetId(card.Id);
+                transaction.Transact();
+                TransactBehavior.Post(transaction);
+                CardBehavior.Post(transaction.Sender);
+                CardBehavior.Post(transaction.Reciever);
+        }
+        public static List<Transaction> GetTransaction (Human human)
+        {
+            using (AppDB appDB = new AppDB())
+                return appDB.Transactions.Where(t => t.Sender.Id == human.CardId || t.Reciever.Id == human.CardId).ToList();
         }
     }
 }

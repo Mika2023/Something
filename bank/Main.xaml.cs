@@ -1,4 +1,5 @@
-﻿using System;
+﻿using bank.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,20 @@ namespace bank
         public Main()
         {
             InitializeComponent();
+            DataContext = new MainVM(this);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Send send = new Send();
+            send.Show();
+            Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Table table = new Table();
+            table.Show();
         }
     }
 }

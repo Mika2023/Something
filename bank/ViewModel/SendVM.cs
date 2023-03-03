@@ -1,4 +1,5 @@
 ﻿using bBehavior;
+using bModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +11,7 @@ using System.Windows;
 
 namespace bank.ViewModel
 {
-    public class SendVM : INotifyPropertyChanged
+    public class SendVM: INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
@@ -19,28 +20,14 @@ namespace bank.ViewModel
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
         Window _sendwindow;
-        public SendVM(Window sendWindow) => _sendwindow = sendWindow;
-        string _comment;
-        int _sum;
+        public Transaction transaction { get; set; }
+        int randCode;
+        public SendVM(Window sendWindow)
+        {
+            transaction = new Transaction();
+            _sendwindow = sendWindow;
+        }
         int _cardnum;
-        public string Comment
-        {
-            get => _comment;
-            set
-            {
-                _comment = value;
-                OnPropertyChanged("Comment");
-            }
-        }
-        public int Sum
-        {
-            get => _sum;
-            set
-            {
-                _sum = value;
-                OnPropertyChanged("Sum");
-            }
-        }
         public int CardNum
         {
             get => _cardnum;
@@ -50,6 +37,37 @@ namespace bank.ViewModel
                 OnPropertyChanged("CardNum");
             }
         }
+        public int RandCode
+        {
+            get => randCode;
+            set
+            {
+                randCode = value;
+                OnPropertyChanged("RandCode");
+            }
+        }
+        //string _comment;
+        //int _sum;
+        //int _cardnum;
+        //public string Comment
+        //{
+        //    get => _comment;
+        //    set
+        //    {
+        //        _comment = value;
+        //        OnPropertyChanged("Comment");
+        //    }
+        //}
+        //public int Sum
+        //{
+        //    get => _sum;
+        //    set
+        //    {
+        //        _sum = value;
+        //        OnPropertyChanged("Sum");
+        //    }
+        //}
+
         Command? send;
         public Command Send
         {
@@ -61,12 +79,35 @@ namespace bank.ViewModel
                       var _card = CardBehavior.Get(CardNum);
                       if (_card != null)
                       {
-                          TransactBehavior.SendMoney(_card,Sum,Comment);
+                          try
+                          {
+                              TransactBehavior.SendMoney(_card, transaction);
+                          }
+                          catch (Exception ex)
+                          {
+                              MessageBox.Show(ex.Message);
+                          }
+                          Main main = new Main();
+                          main.Show();
+                          _sendwindow.Close();
                       }
                       else
                       {
                           MessageBox.Show("Неверный номер карты");
                       }
+                  }));
+            }
+        }
+        Command? rand;
+        public Command Rand
+        {
+            get
+            {
+                return rand ??
+                  (rand = new Command((o) =>
+                  {
+                     Random random = new Random();
+                     RandCode = random.Next();
                   }));
             }
         }

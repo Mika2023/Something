@@ -14,7 +14,7 @@ namespace bModel
         public int PinCode { get; set; }
         public int Balance { get; set; }
         public Human Owner { get; set; }
-        public List<Transaction> Transactions { get; set; }
+        public List<Transaction> Transactions { get; set; } = new();
         public void UpdateEnty(Card card)
         {
             if (card != null)

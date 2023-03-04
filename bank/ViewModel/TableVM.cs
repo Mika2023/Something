@@ -17,7 +17,7 @@ namespace bank.ViewModel
         public TableVM(Window window)
         {
             var h = CardBehavior.GetId(SingleTon.card.Id);
-            if (h != null) transactions = TransactBehavior.GetTransaction(h);
+            if (h != null) transactions = TransactBehavior.GetTransactions(h);
             _window = window;
             
         }

@@ -18,8 +18,10 @@ namespace bModel
         public int Sum { get; set; }
         public string Comment { get; set; }
         public int Code { get; set; }
+        //public TypeCard type { get; set; }
+        //public List<Card> Cards { get; set; }
         public Card Sender { get; set; }
-        public Card Reciever { get; set; } 
+        public Card Reciever { get; set; }
         public void Transact()
         {
             Date = DateTime.Now;
@@ -30,8 +32,8 @@ namespace bModel
             //}
             Sender.Balance -= Sum;
             Reciever.Balance += Sum;
-            Sender.Transactions.Add(this);
-            Reciever.Transactions.Add(this);
+            Sender.TransactionsSener.Add(this);
+            Reciever.TransactionsReciver.Add(this);
         }
         public void UpdateEnty(Transaction transaction)
         {

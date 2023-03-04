@@ -12,12 +12,12 @@ namespace bBehavior
 {
     public static class TransactBehavior
     {
-        public static Transaction[] GetTransactions(Human human)
+        public static List<Transaction> GetTransactions(Card card)
         {
             using (AppDB appDB = new AppDB())
             {
-                var transactions = appDB.Transactions.Where(t=>t.Sender.Id == human.CardId || t.Reciever.Id==human.CardId);
-                return transactions.ToArray();
+                var transactions = appDB.Transactions.Where(t=>t.Sender.Id == card.Id || t.Reciever.Id==card.Id);
+                return transactions.ToList();
             }
         }
         public static void Post(Transaction transaction)
@@ -61,19 +61,20 @@ namespace bBehavior
                 transaction.Transact();
                 CardBehavior.Post(transaction.Sender);
                 CardBehavior.Post(transaction.Reciever);
-            //PostSingle(transaction);
+            Post(transaction);
         }
-        public static List<Transaction> GetTransaction (Human human)
-        {
-            var card = CardBehavior.GetId(human.CardId);
-            if (card != null) return card.Transactions;
-            else return new List<Transaction> ();
-        }
-        public static List<Transaction> GetTransaction(Card card)
-        {
-            var c = CardBehavior.GetId(card.Id);
-            if (c != null) return c.Transactions;
-            else return new List<Transaction>();
-        }
+        //public static List<Transaction> GetTransaction (Human human)
+        //{
+        //    var card = CardBehavior.GetId(human.CardId);
+        //    if (card != null) return card.Transactions;
+        //    else return new List<Transaction> ();
+        //}
+        //public static List<Transaction> GetTransaction(Card card)
+        //{
+        //    var c = CardBehavior.GetId(card.Id);
+        //    if (c != null) return c.Transactions;
+        //    else return new List<Transaction>();
+
+        //}
     }
 }

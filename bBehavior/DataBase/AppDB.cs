@@ -16,6 +16,7 @@ namespace bBehavior.DataBase
         public DbSet<Human> People { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Transaction> Transactions{ get; set; }
+        public DbSet<CardTransact> cardTransacts{ get; set; }
         public AppDB() => Database.EnsureCreated();
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

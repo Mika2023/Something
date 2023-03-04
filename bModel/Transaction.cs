@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace bModel
 {
+    public enum TypeCard
+    {
+        Sender,
+        Reciever
+    }
     public class Transaction
     {
         public int Id { get; set; }
@@ -14,10 +19,15 @@ namespace bModel
         public string Comment { get; set; }
         public int Code { get; set; }
         public Card Sender { get; set; }
-        public Card Reciever { get; set; }
+        public Card Reciever { get; set; } 
         public void Transact()
         {
             Date = DateTime.Now;
+            //switch(type)
+            //{
+            //    case TypeCard.Sender:
+            //        var Card = 
+            //}
             Sender.Balance -= Sum;
             Reciever.Balance += Sum;
             Sender.Transactions.Add(this);
@@ -26,7 +36,11 @@ namespace bModel
         public void UpdateEnty(Transaction transaction)
         {
             if (transaction != null)
-            Comment = transaction.Comment;
+            {
+                Comment = transaction.Comment;
+                
+            }
+            
         }
     }
 }

@@ -21,6 +21,8 @@ namespace bModel
             {
                 PinCode = card.PinCode;
                 Balance = card.Balance;
+                foreach (Transaction t in card.Transactions) Transactions.Add(t);
+                //Transactions = card.Transactions;
             }
         }
         public Card() { Balance = 100; }

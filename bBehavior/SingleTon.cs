@@ -1,4 +1,5 @@
-﻿using bModel;
+﻿using bBehavior.DataBase;
+using bModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace bBehavior
         public static Human human { get; set; }
         public static User user { get; set; }
         public static Card card { get; set; }
+        public static AppDB appDB { get; set; } = new AppDB();
         public static void join()
         {
             var Hum = HumanBehavior.GetUser(user.Id);

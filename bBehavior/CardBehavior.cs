@@ -23,6 +23,7 @@ namespace bBehavior
                 if (c != null)
                 {
                     c.UpdateEnty(card);
+                    
                     appDB.Update(c);
                 }
                 else
@@ -41,6 +42,20 @@ namespace bBehavior
         {
             using (AppDB appDB = new AppDB())
                 return appDB.Cards.FirstOrDefault(c => c.Id == cardId);
+        }
+        public static void PostSingle(Card card)
+        {
+            var c = SingleTon.appDB.Cards.FirstOrDefault(u => u.CardNumber == card.CardNumber);
+            if (c != null)
+            {
+                c.UpdateEnty(card);
+                SingleTon.appDB.Update(c);
+            }
+            else
+            {
+                SingleTon.appDB.Cards.Add(card);
+            }
+            SingleTon.appDB.SaveChanges();
         }
     }
 }

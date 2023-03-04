@@ -16,7 +16,7 @@ namespace bank.ViewModel
         public List<Transaction> transactions { get; set; } = new();
         public TableVM(Window window)
         {
-            var h = HumanBehavior.Get(SingleTon.human.PasportNum);
+            var h = CardBehavior.GetId(SingleTon.card.Id);
             if (h != null) transactions = TransactBehavior.GetTransaction(h);
             _window = window;
             

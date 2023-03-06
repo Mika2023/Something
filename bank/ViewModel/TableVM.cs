@@ -13,11 +13,17 @@ namespace bank.ViewModel
     public class TableVM
     {
         Window _window;
-        public List<Transaction> transactions { get; set; } = new();
+        public List<Transaction> transactionsSend { get; set; } = new();
+        public List<Transaction> transactionsGot { get; set; } = new();
+
         public TableVM(Window window)
         {
             var h = CardBehavior.GetId(SingleTon.card.Id);
-            if (h != null) transactions = TransactBehavior.GetTransactions(h);
+            if (h != null)
+            {
+                transactionsSend = TransactBehavior.GetTransactionsSend(h);
+                transactionsGot = TransactBehavior.GetTransactionsGot(h);
+            }
             _window = window;
             
         }

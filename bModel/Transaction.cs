@@ -21,7 +21,9 @@ namespace bModel
         //public TypeCard type { get; set; }
         //public List<Card> Cards { get; set; }
         public Card Sender { get; set; }
+        public int SenderId { get; set; }
         public Card Reciever { get; set; }
+        public int RecieverId { get; set; }
         public void Transact()
         {
             Date = DateTime.Now;
@@ -40,7 +42,7 @@ namespace bModel
             if (transaction != null)
             {
                 Comment = transaction.Comment;
-                
+                Date = transaction.Date;
             }
             
         }

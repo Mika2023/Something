@@ -11,12 +11,10 @@ using System.Windows;
 namespace bank.ViewModel
 {
     public class TableVM
-    {
-        Window _window;
+    { 
         public List<Transaction> transactionsSend { get; set; } = new();
         public List<Transaction> transactionsGot { get; set; } = new();
-
-        public TableVM(Window window)
+        public TableVM()
         {
             var h = CardBehavior.GetId(SingleTon.card.Id);
             if (h != null)
@@ -24,7 +22,6 @@ namespace bank.ViewModel
                 transactionsSend = TransactBehavior.GetTransactionsSend(h);
                 transactionsGot = TransactBehavior.GetTransactionsGot(h);
             }
-            _window = window;
             
         }
     }

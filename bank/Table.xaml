@@ -6,19 +6,14 @@
         xmlns:local="clr-namespace:bank"
         mc:Ignorable="d"
         Title="Table" Height="450" Width="800">
-    <Grid >
+    <Grid Margin="0,0,0,3" >
         <Grid.Background>
             <ImageBrush ImageSource="/1612923688_86-p-krasnii-fon-dlya-storis-107.jpg"/>
         </Grid.Background>
-        <DataGrid ItemsSource="{Binding transactions}" Margin="56,38,56,38" AutoGenerateColumns="False">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Дата" Binding="{Binding Path=Date}" Width="75"/>
-                <DataGridTextColumn Header="Сумма" Binding="{Binding Path=Sum}" Width="75"/>
-                <DataGridTextColumn Header="Комментарий" Binding="{Binding Path=Comment}" Width="250"/>
-                <DataGridTextColumn Header="Отправитель" Binding="{Binding Path=Sender.CardNum}" Width="145"/>
-                <DataGridTextColumn Header="Получатель" Binding="{Binding Path=Reciever.CardNum}" Width="150"/>
-            </DataGrid.Columns>
-        </DataGrid>
+        <Frame NavigationUIVisibility="Hidden" x:Name="FrameMain" Content="Frame" Margin="100,58,100,57"/>
+        <Button Content="Получили" HorizontalAlignment="Left" Margin="183,389,0,0" VerticalAlignment="Top" Width="155" Height="32" Background="#FFFFC8C8" FontSize="18" Click="Button_Click"/>
+        <Button Content="Отправили" HorizontalAlignment="Left" Margin="463,389,0,0" VerticalAlignment="Top" Height="32" Width="155" Background="#FFFFC8C8" FontSize="18" Click="Button_Click_1"/>
+
 
 
     </Grid>

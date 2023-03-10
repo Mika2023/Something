@@ -20,10 +20,36 @@ namespace bank
     /// </summary>
     public partial class Table : Window
     {
+        Page got;
+        Page send;
+        Page Got
+        {
+            get
+            {
+                return got ?? (got = new GotPage());
+            }
+        }
+        Page Send
+        {
+            get
+            {
+                return send ?? (send = new SendPage());
+            }
+        }
         public Table()
         {
             InitializeComponent();
-            DataContext = new TableVM(this);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            FrameMain.NavigationService.Navigate(Got);
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            FrameMain.NavigationService.Navigate(Send);
         }
     }
 }

@@ -35,6 +35,8 @@ namespace bBehavior
                 var c = appDB.Transactions.FirstOrDefault(u => u.Code == transaction.Code);
                 if (c != null)
                 {
+                    c.Sender = CardBehavior.GetId(c.SenderId);
+                    c.Reciever = CardBehavior.GetId(c.RecieverId);
                     c.UpdateEnty(transaction);
                     appDB.Update(c);
                 }
@@ -45,22 +47,22 @@ namespace bBehavior
                 appDB.SaveChanges();
             }
         }
-        public static void PostSingle(Transaction transaction)
-        {
+        //public static void PostSingle(Transaction transaction)
+        //{
             
-                var c = SingleTon.appDB.Transactions.FirstOrDefault(u => u.Code == transaction.Code);
-                if (c != null)
-                {
-                    c.UpdateEnty(transaction);
-                    SingleTon.appDB.Update(c);
-                }
-                else
-                {
-                    SingleTon.appDB.Transactions.Add(transaction);
-                }
-                SingleTon.appDB.SaveChanges();
+        //        var c = SingleTon.appDB.Transactions.FirstOrDefault(u => u.Code == transaction.Code);
+        //        if (c != null)
+        //        {
+        //            c.UpdateEnty(transaction);
+        //            SingleTon.appDB.Update(c);
+        //        }
+        //        else
+        //        {
+        //            SingleTon.appDB.Transactions.Add(transaction);
+        //        }
+        //        SingleTon.appDB.SaveChanges();
             
-        }
+        //}
         public static void SendMoney(Card card, Transaction transaction)
         {
             

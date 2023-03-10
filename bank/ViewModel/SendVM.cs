@@ -78,7 +78,7 @@ namespace bank.ViewModel
                   (send = new Command((o) =>
                   {
                       var _card = CardBehavior.Get(CardNum);
-                      if (_card != null)
+                      if (_card != null && randCode==transaction.Code)
                       {
                           
                               TransactBehavior.SendMoney(_card, transaction);
@@ -89,7 +89,7 @@ namespace bank.ViewModel
                       }
                       else
                       {
-                          MessageBox.Show("Неверный номер карты");
+                          MessageBox.Show("Неверный номер карты или код");
                       }
                   }));
             }

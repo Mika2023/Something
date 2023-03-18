@@ -1,0 +1,22 @@
+﻿<Window x:Class="bank.InCard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:bank"
+        mc:Ignorable="d"
+        Title="InCard" Height="380" Width="500">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/1612923688_86-p-krasnii-fon-dlya-storis-107.jpg"/>
+        </Grid.Background>
+        <TextBlock HorizontalAlignment="Center" Margin="0,47,0,0" TextWrapping="Wrap" Text="Информация" VerticalAlignment="Top" Height="34" Width="258" Background="#FFFFC8C8" TextAlignment="Center" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="31,112,0,0" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top" Height="34" Width="102" Foreground="#FFFFC8C8" TextAlignment="Center" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,112,0,0" TextWrapping="Wrap" Text="{Binding human.Name}" VerticalAlignment="Top" Height="34" Width="192" Background="#FFFFC8C8" TextAlignment="Center" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Margin="31,183,0,0" TextWrapping="Wrap" Text="Фамилия" VerticalAlignment="Top" Height="34" Width="102" Foreground="#FFFFC8C8" TextAlignment="Center" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,183,0,0" TextWrapping="Wrap" Text="{Binding human.Lastname}" VerticalAlignment="Top" Height="34" Width="192" Background="#FFFFC8C8" TextAlignment="Center" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Margin="31,250,0,0" TextWrapping="Wrap" Text="Возраст" VerticalAlignment="Top" Height="34" Width="102" Foreground="#FFFFC8C8" TextAlignment="Center" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,250,0,0" TextWrapping="Wrap" Text="{Binding human.Age}" VerticalAlignment="Top" Height="34" Width="192" Background="#FFFFC8C8" TextAlignment="Center" FontSize="18"/>
+
+    </Grid>
+</Window>

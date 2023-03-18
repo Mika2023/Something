@@ -10,10 +10,10 @@
         <Grid.Background>
             <ImageBrush ImageSource="/1612923688_86-p-krasnii-fon-dlya-storis-107.jpg"/>
         </Grid.Background>
-        <Frame NavigationUIVisibility="Hidden" x:Name="FrameMain" Content="Frame" Margin="100,58,100,57"/>
-        <Button Content="Получили" HorizontalAlignment="Left" Margin="183,389,0,0" VerticalAlignment="Top" Width="155" Height="32" Background="#FFFFC8C8" FontSize="18" Click="Button_Click"/>
-        <Button Content="Отправили" HorizontalAlignment="Left" Margin="463,389,0,0" VerticalAlignment="Top" Height="32" Width="155" Background="#FFFFC8C8" FontSize="18" Click="Button_Click_1"/>
-
+        <Frame NavigationUIVisibility="Hidden" x:Name="FrameMain" Content="Frame" Margin="74,19,74,77"/>
+        <Button Content="Получили" HorizontalAlignment="Left" Margin="74,373,0,0" VerticalAlignment="Top" Width="155" Height="32" Background="#FFFFC8C8" FontSize="18" Click="Button_Click"/>
+        <Button Content="Отправили" HorizontalAlignment="Left" Margin="245,373,0,0" VerticalAlignment="Top" Height="32" Width="155" Background="#FFFFC8C8" FontSize="18" Click="Button_Click_1"/>
+        <Button Content="Информация о человеке" HorizontalAlignment="Left" Margin="452,373,0,0" VerticalAlignment="Top" Height="32" Width="246" Background="#FFFFC8C8" FontSize="18" Click="Button_Click_2"/>
 
 
     </Grid>

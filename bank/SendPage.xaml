@@ -14,7 +14,7 @@
                 <DataGridTextColumn Header="Дата" Binding="{Binding Path=Date}" Width="135"/>
                 <DataGridTextColumn Header="Сумма" Binding="{Binding Path=Sum}" Width="205"/>
                 <DataGridTextColumn Header="Комментарий" Binding="{Binding Path=Comment}" Width="250"/>
-                <DataGridTextColumn Header="Получатель" Binding="{Binding Path=RecieverId}" Width="205"/>
+                <DataGridTextColumn Header="Id карты получателя" Binding="{Binding Path=RecieverId}" Width="205"/>
             </DataGrid.Columns>
         </DataGrid>
         

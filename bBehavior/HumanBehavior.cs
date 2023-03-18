@@ -46,6 +46,11 @@ namespace bBehavior
             using (AppDB appDB = new AppDB())
                 return appDB.People.FirstOrDefault(u => u.PasportNum == PasportNum);
         }
+        public static Human GetByCard(int CardId)
+        {
+            using (AppDB appDB = new AppDB())
+                return appDB.People.FirstOrDefault(u => u.CardId == CardId);
+        }
         public static Human GetUser(int UserId)
         {
             using (AppDB appDB = new AppDB())

@@ -51,5 +51,11 @@ namespace bank
         {
             FrameMain.NavigationService.Navigate(Send);
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            FindId inCard = new FindId();
+            inCard.Show();
+        }
     }
 }

@@ -80,12 +80,15 @@ namespace bank.ViewModel
                       var _card = CardBehavior.Get(CardNum);
                       if (_card != null && randCode==transaction.Code)
                       {
-                          
+                          if(transaction.Comment!=null && transaction.Sum!=0)
+                          {
                               TransactBehavior.SendMoney(_card, transaction);
-                          
-                          Main main = new Main();
-                          main.Show();
-                          _sendwindow.Close();
+
+                              Main main = new Main();
+                              main.Show();
+                              _sendwindow.Close();
+                          }
+                          else MessageBox.Show("Сначала введите комментарий и сумму");
                       }
                       else
                       {

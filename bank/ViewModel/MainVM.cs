@@ -20,18 +20,5 @@ namespace bank.ViewModel
             human = HumanBehavior.Get(SingleTon.human.PasportNum);
             _window = window;
         }
-        //Command? _send;
-        //public Command Send
-        //{
-        //    get
-        //    {
-        //        return _send ??
-        //          (_send = new Command((o) =>
-        //          {
-        //              Send send = new Send();
-        //              send.Show();
-        //          }));
-        //    }
-        //}
     }
 }

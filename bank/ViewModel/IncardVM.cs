@@ -16,20 +16,11 @@ namespace bank.ViewModel
     {
         Window _window { get; set; }
         public int _ID;
-        //Page inf;
-        //Page Inf
-        //{
-        //    get
-        //    {
-        //        return inf ?? (inf = new InPage());
-        //    }
-        //}
         public event PropertyChangedEventHandler? PropertyChanged;
 
         public Human human { get; set; }
         public IncardVM(Window window)
         {
-            //human = HumanBehavior.GetByCard(ID);
             _window = window;
         }
         public IncardVM(Window window, int Id)

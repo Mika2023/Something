@@ -47,28 +47,7 @@ namespace bank.ViewModel
                 OnPropertyChanged("RandCode");
             }
         }
-        //string _comment;
-        //int _sum;
-        //int _cardnum;
-        //public string Comment
-        //{
-        //    get => _comment;
-        //    set
-        //    {
-        //        _comment = value;
-        //        OnPropertyChanged("Comment");
-        //    }
-        //}
-        //public int Sum
-        //{
-        //    get => _sum;
-        //    set
-        //    {
-        //        _sum = value;
-        //        OnPropertyChanged("Sum");
-        //    }
-        //}
-
+        
         Command? send;
         public Command Send
         {

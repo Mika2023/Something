@@ -31,54 +31,10 @@ namespace bank.ViewModel
                           HumanBehavior.Post(Human);
                       CardBehavior.Post(SIngleTonReg.card);
                       UserBehavior.Post(SIngleTonReg.user);
-                      //SingleTon.human = Human;
                           
                           _window.Close();
-                      
-                      //catch (Exception ex)
-                      //{
-                      //    MessageBox.Show(ex.Message);
-                      //}
                   }));
             }
         }
-        //Command? _skip;
-        //public Command Skip
-        //{
-        //    get
-        //    {
-        //        return _skip ??
-        //            (_skip= new Command((o) =>
-        //            {
-
-        //                try
-        //                {
-        //                    //var human = HumanBehavior.GetUser(SingleTon.user.Id);
-        //                    //if (human != null)
-        //                    //{
-        //                    //    var card = CardBehavior.GetId(human.CardId);
-        //                    //    if (card != null)
-        //                    //    {
-        //                    //        SingleTon.human = human;
-        //                    //        SingleTon.card = card;
-        //                    //        SingleTon.join();
-        //                    //        Main main = new Main();
-        //                    //        main.Show();
-        //                    //        _window?.Close();
-        //                    //    }
-        //                    //}
-
-        //                }
-        //                catch (Exception ex)
-        //                {
-        //                    MessageBox.Show(ex.Message);
-        //                }
-
-        //            }));
-                    
-                    
-                    
-        //    }
-        //}
     }
 }
